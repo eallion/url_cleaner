@@ -15,24 +15,33 @@ Chrome 应用商店链接：[https://chrome.google.com/webstore/detail/净化淘
 > 
 > 支持：淘宝、天猫、1688。
 
+---
+
 ### 效果图1：
 
 点击图标即可净化淘宝链接，并复制。
 
 ![](https://github.com/eallion/taobao_url_shorten/blob/master/screenshots/browser_action.png)
 
+---
+
 ### 效果图2：
 
 在淘宝页面点击右键，即可以净化当前页面的链接，并复制到剪切板。
+
 （因淘宝限制诸多，右键功能没有做其他的弹出效果，只是净化并复制。）
 
 ![](https://github.com/eallion/taobao_url_shorten/blob/master/screenshots/right_click.png)
+
+---
 
 ### 效果图3：
 
 右键净化后的提示。
 
 ![](https://github.com/eallion/taobao_url_shorten/blob/master/screenshots/alert.png)
+
+---
 
 # 书签栏插件
 
