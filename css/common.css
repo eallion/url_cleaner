@@ -1,0 +1,78 @@
+.SIRUI_button{
+	background:#3089dc;
+	color:#fff;
+	border:none;
+	cursor:pointer;
+	border-radius:3px;
+	padding:5px 8px;
+	margin-right:5px;
+}
+.SIRUI_button:hover{
+	background:#333 !important;
+}
+
+.SIRUI_textarea{
+	padding:5px;
+	height:50px;
+	width:300px;
+	border:1px solid #eee;
+	margin-bottom:5px;
+}
+
+.SIRUI_input{
+	padding:5px;
+	width:260px;
+	border:1px solid #eee;
+	margin:5px 0;
+}
+
+.SIRUI_tishi{
+	font-size:12px;
+	color:#666;
+	margin:3px 0;
+}
+
+
+#sirui_tmbg{
+	width:100%;
+	height:100%;
+	background:#000;
+	opacity:0.4;
+	
+	position:fixed;
+	top:0;
+	left:0;
+	
+	display:none;
+}
+
+#sirui_tips_box{
+	position:fixed;
+	
+	top: -40%;
+	left: 50%;
+	-ms-transform: translate(-40%, -50%);
+	-webkit-transform: translate(-40%, -50%);
+	transform: translate(-40%, -50%);
+	
+	padding:20px 40px;
+	
+	background:#F40;
+	color:#fff;
+	font-size:16px;
+	
+	z-index:9999999999;
+	border-radius:5px;
+	
+	font-family:Microsoft Yahei,arial;
+}
+
+#sirui_tips_box[data-color="red"]{
+	background:#F40;
+}
+#sirui_tips_box[data-color="black"]{
+	background:#222;
+}
+#sirui_tips_box[data-color="blue"]{
+	background:#1c9eff;
+}
