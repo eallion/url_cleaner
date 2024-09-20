@@ -1,0 +1,80 @@
+body {
+  font-family: Arial, sans-serif;
+  width: 375px;
+  padding: 10px;
+}
+
+textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  height: auto;
+}
+
+button {
+  width: auto;
+  margin-bottom: 5px;
+}
+
+.options_desc {
+  margin: 10px 0;
+}
+
+.options_desc p {
+  margin: 0;
+  padding: 0;
+}
+
+.opt_btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+#popup_tips {
+  margin-bottom: 10px;
+}
+
+.popup_btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.popup_btn_copy,
+.popup_btn_ext {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.notification {
+  position: fixed;
+  font-size: 16px;
+  left: 50%;
+  top: 10px;
+  width: auto;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  z-index: 1000;
+  transition: opacity 0.5s;
+}
+
+#whitelist {
+  min-height: 512px;
+}
+
+#pureurl {
+  width: 100%;
+  resize: none;
+  overflow: hidden;
+  font-size: 12px;
+}

@@ -1,0 +1,70 @@
+{
+  "extName": {
+    "message": "网址净化器",
+    "description": "URL Cleaner"
+  },
+  "extDesc": {
+    "message": "净化当前标签页地址栏的链接。",
+    "description": "URL Cleaner 说明"
+  },
+  "options_title": {
+    "message": "域名白名单"
+  },
+  "options_title_h1": {
+    "message": "域名白名单"
+  },
+  "options_desc_p1": {
+    "message": "域名白名单中的链接才会被净化。"
+  },
+  "options_desc_p2": {
+    "message": "每行一个域名，支持泛域名，如 *.jd.com"
+  },
+  "options_message_saved": {
+    "message": "白名单已保存！"
+  },
+  "options_message_reset": {
+    "message": "白名单已重置为默认！"
+  },
+  "options_button_saved": {
+    "message": "保存"
+  },
+  "options_button_reset": {
+    "message": "重置为默认"
+  },
+  "popup_title": {
+    "message": "URL Cleaner"
+  },
+  "popup_tips_true": {
+    "message": "✅ 已净化的链接"
+  },
+  "popup_tips_false": {
+    "message": "❌ 链接未净化（不在白名单中）[<a href='options.html' target='_blank'>设置白名单</a>]"
+  },
+  "popup_copy_true": {
+    "message": "成功复制到剪贴板！"
+  },
+  "popup_copy_false": {
+    "message": "复制失败，请重试。"
+  },
+  "popup_add_true": {
+    "message": "已加入白名单！"
+  },
+  "popup_add_exist": {
+    "message": "已在白名单中！"
+  },
+  "popup_copy_url": {
+    "message": "复制 URL"
+  },
+  "popup_copy_markdown": {
+    "message": "复制 Markdown"
+  },
+  "popup_copy_html": {
+    "message": "复制 HTML"
+  },
+  "popup_add_to_whitelist": {
+    "message": "加入白名单"
+  },
+  "popup_close": {
+    "message": "关闭"
+  }
+}

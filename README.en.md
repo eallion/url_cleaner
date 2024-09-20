@@ -1,10 +1,10 @@
-# 网址净化器
+# URL Cleaner
 
-中文说明 | [[English](README.en.md)]
+English | [[中文说明](README.md)]
 
 [![](assets/ChromeStore.png)](https://chromewebstore.google.com/detail/npokdddpckpfhlecbgmplgcidebjmkfm)
 
-默认支持：淘宝、天猫、京东、1688、Google、GitHub 等。
+Default: taobao tmall jingdong 1688 Google GitHub etc.
 
 ![](assets/screenshot.png)
 
@@ -26,12 +26,12 @@
 - b23.tv
 - cloud.tencent.com
 
-可设置白名单，净化任意网址。
+You can set a whitelist to clean any URL.
 
-### 待办
+### Todo
 
-- [ ] 添加订单规则
+- [ ] Add Online Rules
 
-### 贡献
+### Contribution
 
-欢迎 PR！
+PRs are welcome!

@@ -1,38 +1,25 @@
-<!doctype html>
-<html>
-<HEAD>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-<link href="css/common.css" rel="stylesheet"  type="text/css"/>
-<style type="text/css">
-	#mainPopup {
-		padding: 10px;
-		height: 120px;
-		width: 400px;
-		font-family: Helvetica, Ubuntu, Arial, sans-serif;
-	}
-	h1 {
-		font-size: 2em;
-	}
-	#pureurl{
-		width:380px;
-		padding: 5px;
-		margin: 10px 0;
-	}
-	span.title{
-		font-size: 14px;
-	}
-</style>
-</HEAD>
-<BODY>
-<div id="mainPopup">
-	<span class="title">净化后的链接：</span>
-	<div>
-		<textarea name="" id="pureurl" ></textarea>
-	</div>
-	<span class="SIRUI_button copy">复制</span>
-</div>
-<script src="jquery-1.7.2.js"></script>
-<script type="text/javascript" src="layer/layer.js"></script>
-<script src="shortener.js"></script>
-</BODY>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title id="popup_title">URL Cleaner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="notification" class="notification" style="display: none;"></div>
+    <div id="popup_tips"></div>
+    <textarea id="pureurl" aria-label="pureurl"></textarea>
+    <div class="popup_btn">
+      <div class="popup_btn_copy">
+        <button id="copy_url" type="button">Copy</button>
+        <button id="copy_markdown" type="button">Copy Markdown</button>
+        <button id="copy_html" type="button">Copy HTML</button>
+        <button id="add_to_whitelist" type="button">Add to Whitelist</button>
+      </div>
+      <!-- <div class="popup_btn_close">
+        <button id="add_to_whitelist" type="button">Add to Whitelist</button>
+      </div> -->
+    </div>
+    <script src="popup.js"></script>
+</body>
 </html>
