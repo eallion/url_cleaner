@@ -69,7 +69,7 @@ button {
 }
 
 #whitelist {
-  min-height: 512px;
+  field-sizing: content;
 }
 
 #pureurl {
@@ -77,4 +77,5 @@ button {
   resize: none;
   overflow: hidden;
   font-size: 12px;
+  field-sizing: content;
 }

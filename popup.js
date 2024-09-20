@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const currentUrl = tabs[0].url;
     const cleanedUrl = await cleanUrl(currentUrl);
     pureUrlTextArea.value = cleanedUrl;
-    adjustTextAreaHeight(pureUrlTextArea);
 
     const title = tabs[0].title.split(/[_|]/)[0].trim();
     const markdownFormat = `[${title}](${cleanedUrl})`;
@@ -177,8 +176,4 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 1500);
   }
 
-  function adjustTextAreaHeight(textarea) {
-    textarea.style.height = 'auto'; // 重置高度
-    textarea.style.height = textarea.scrollHeight + 'px'; // 设置为内容高度
-  }
 });
