@@ -4,7 +4,7 @@ English | [[中文说明](README.md)]
 
 [![](assets/ChromeStore.png)](https://chromewebstore.google.com/detail/npokdddpckpfhlecbgmplgcidebjmkfm)
 
-Default: taobao tmall jingdong 1688 Google GitHub etc.
+Default: taobao tmall jingdong 1688 Google GitHub CSDN etc.
 
 ![](assets/screenshot.png)
 
@@ -23,6 +23,7 @@ Default: taobao tmall jingdong 1688 Google GitHub etc.
 - *.tmall.com
 - *.tmall.hk
 - *.yandex.com
+- *.csdn.net
 - b23.tv
 - cloud.tencent.com
 

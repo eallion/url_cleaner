@@ -4,7 +4,7 @@
 
 [![](assets/ChromeStore.png)](https://chromewebstore.google.com/detail/npokdddpckpfhlecbgmplgcidebjmkfm)
 
-默认支持：淘宝、天猫、京东、1688、Google、GitHub 等。
+默认支持：淘宝、天猫、京东、1688、Google、GitHub、CSDN 等。
 
 ![](assets/screenshot.png)
 
@@ -23,6 +23,7 @@
 - *.tmall.com
 - *.tmall.hk
 - *.yandex.com
+- *.csdn.net
 - b23.tv
 - cloud.tencent.com
 
@@ -30,7 +31,7 @@
 
 ### 待办
 
-- [ ] 添加订单规则
+- [ ] 添加订阅规则
 
 ### 贡献
 
