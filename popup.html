@@ -7,19 +7,41 @@
 </head>
 <body>
     <div id="notification" class="notification" style="display: none;"></div>
-    <div id="popup_tips"></div>
-    <textarea id="pureurl" aria-label="pureurl"></textarea>
-    <div class="popup_btn">
-      <div class="popup_btn_copy">
-        <button id="copy_url" type="button">Copy</button>
-        <button id="copy_markdown" type="button">Copy Markdown</button>
-        <button id="copy_html" type="button">Copy HTML</button>
-        <button id="add_to_whitelist" type="button">Add to Whitelist</button>
-      </div>
-      <!-- <div class="popup_btn_close">
-        <button id="add_to_whitelist" type="button">Add to Whitelist</button>
-      </div> -->
+    
+    <div class="container">
+        <div id="popup_tips" class="tips-box"></div>
+        
+        <div class="url-box">
+            <textarea id="pureurl" aria-label="pureurl"></textarea>
+        </div>
+        
+        <div class="action-buttons">
+            <button id="copy_url" type="button" class="btn">Copy</button>
+            <button id="copy_markdown" type="button" class="btn">Copy Markdown</button>
+            <button id="copy_html" type="button" class="btn">Copy HTML</button>
+            <button id="add_to_whitelist" type="button" class="btn">Add to Whitelist</button>
+        </div>
+        
+        <div class="whitelist-section">
+            <div class="section-header">
+                <h3 id="whitelist_title">白名单设置</h3>
+                <div class="whitelist-controls">
+                    <button id="open_options" class="link-btn">单独页面打开</button>
+                    <button id="toggle_whitelist" class="toggle-btn">显示</button>
+                </div>
+            </div>
+            
+            <div id="whitelist_container" class="hidden">
+                <textarea id="whitelist" aria-label="whitelist"></textarea>
+                <div class="whitelist-buttons">
+                    <button id="reset" type="button" class="btn secondary">重置为默认</button>
+                    <button id="save" type="button" class="btn primary">保存</button>
+                </div>
+                <p id="whitelist_message" class="message"></p>
+            </div>
+        </div>
     </div>
+    
     <script src="popup.js"></script>
 </body>
 </html>

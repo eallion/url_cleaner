@@ -37,7 +37,7 @@
     "message": "✅ Link has been cleaned"
   },
   "popup_tips_false": {
-    "message": "❌ Link not cleaned (not in whitelist) [<a href='options.html' target='_blank'>Set Whitelist</a>]"
+    "message": "❌ Link not cleaned (not in whitelist)"
   },
   "popup_copy_true": {
     "message": "Successfully copied to clipboard!"
@@ -65,5 +65,14 @@
   },
   "popup_close": {
     "message": "Close"
+  },
+  "popup_show_whitelist": {
+    "message": "Show"
+  },
+  "popup_hide_whitelist": {
+    "message": "Hide"
+  },
+  "popup_open_options": {
+    "message": "Open in new page"
   }
 }

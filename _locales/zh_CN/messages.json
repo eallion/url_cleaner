@@ -38,7 +38,7 @@
     "message": "✅ 已净化的链接"
   },
   "popup_tips_false": {
-    "message": "❌ 链接未净化（不在白名单中）[<a href='options.html' target='_blank'>设置白名单</a>]"
+    "message": "❌ 链接未净化（不在白名单中）"
   },
   "popup_copy_true": {
     "message": "成功复制到剪贴板！"
@@ -66,5 +66,14 @@
   },
   "popup_close": {
     "message": "关闭"
+  },
+  "popup_show_whitelist": {
+    "message": "显示"
+  },
+  "popup_hide_whitelist": {
+    "message": "隐藏"
+  },
+  "popup_open_options": {
+    "message": "单独页面打开"
   }
 }

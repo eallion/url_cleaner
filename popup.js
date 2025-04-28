@@ -7,13 +7,78 @@ document.addEventListener('DOMContentLoaded', function () {
   // const closePopupButton = document.getElementById('close_popup');
   const tipsDiv = document.getElementById('popup_tips');
   const notificationDiv = document.getElementById('notification');
+  
+  // 白名单相关元素
+  const toggleWhitelistButton = document.getElementById('toggle_whitelist');
+  const whitelistContainer = document.getElementById('whitelist_container');
+  const whitelistTextArea = document.getElementById('whitelist');
+  const saveButton = document.getElementById('save');
+  const resetButton = document.getElementById('reset');
+  const whitelistMessage = document.getElementById('whitelist_message');
+
+  // 新添加的按钮
+  const openOptionsButton = document.getElementById('open_options');
 
   // i18n
   copyUrlButton.innerHTML = chrome.i18n.getMessage('popup_copy_url');
   copyMarkdownButton.innerHTML = chrome.i18n.getMessage('popup_copy_markdown');
   copyHtmlButton.innerHTML = chrome.i18n.getMessage('popup_copy_html');
   addToWhitelistButton.innerHTML = chrome.i18n.getMessage('popup_add_to_whitelist');
-  // closePopupButton.innerHTML = chrome.i18n.getMessage('popup_close');
+  document.getElementById('whitelist_title').innerHTML = chrome.i18n.getMessage('options_title');
+  toggleWhitelistButton.innerHTML = chrome.i18n.getMessage('popup_show_whitelist');
+  saveButton.textContent = chrome.i18n.getMessage('options_button_saved');
+  resetButton.textContent = chrome.i18n.getMessage('options_button_reset');
+  openOptionsButton.innerHTML = chrome.i18n.getMessage('popup_open_options');
+
+  // 切换白名单显示/隐藏
+  toggleWhitelistButton.addEventListener('click', function() {
+    if (whitelistContainer.classList.contains('hidden')) {
+      whitelistContainer.classList.remove('hidden');
+      toggleWhitelistButton.textContent = chrome.i18n.getMessage('popup_hide_whitelist');
+      loadWhitelist();
+    } else {
+      whitelistContainer.classList.add('hidden');
+      toggleWhitelistButton.textContent = chrome.i18n.getMessage('popup_show_whitelist');
+    }
+  });
+
+  // 加载白名单
+  function loadWhitelist() {
+    chrome.storage.sync.get('whitelist', function (data) {
+      if (data.whitelist) {
+        whitelistTextArea.value = data.whitelist.join('\n');
+      } else {
+        whitelistTextArea.value = defaultWhitelist.join('\n');
+      }
+    });
+  }
+
+  // 保存白名单
+  saveButton.addEventListener('click', function () {
+    const whitelist = whitelistTextArea.value.split('\n').map(domain => domain.trim()).filter(domain => domain);
+    chrome.storage.sync.set({ whitelist: whitelist }, function () {
+      whitelistMessage.innerHTML = chrome.i18n.getMessage('options_message_saved');
+      setTimeout(() => {
+        whitelistMessage.innerHTML = '';
+      }, 2000);
+    });
+  });
+
+  // 重置为默认白名单
+  resetButton.addEventListener('click', function () {
+    chrome.storage.sync.set({ whitelist: defaultWhitelist }, function () {
+      whitelistTextArea.value = defaultWhitelist.join('\n');
+      whitelistMessage.innerHTML = chrome.i18n.getMessage('options_message_reset');
+      setTimeout(() => {
+        whitelistMessage.innerHTML = '';
+      }, 2000);
+    });
+  });
+
+  // 添加打开选项页面的事件处理
+  openOptionsButton.addEventListener('click', function() {
+    chrome.runtime.openOptionsPage();
+  });
 
   chrome.tabs.query({ active: true, currentWindow: true }, async function (tabs) {
     const currentUrl = tabs[0].url;
@@ -51,27 +116,28 @@ document.addEventListener('DOMContentLoaded', function () {
     };
   });
 
-  async function cleanUrl(url) {
-    const defaultWhitelist = [
-      'github.com',
-      '*.1688.com',
-      '*.aliyun.com',
-      '*.baidu.com',
-      '*.bing.com',
-      '*.bilibili.com',
-      '*.fliggy.com',
-      '*.google.com',
-      '*.jd.com',
-      '*.jd.hk',
-      '*.so.com',
-      '*.taobao.com',
-      '*.tmall.com',
-      '*.tmall.hk',
-      '*.yandex.com',
-      'b23.tv',
-      'cloud.tencent.com'
-    ];
+  const defaultWhitelist = [
+    'github.com',
+    '*.1688.com',
+    '*.aliyun.com',
+    '*.baidu.com',
+    '*.bing.com',
+    '*.bilibili.com',
+    '*.fliggy.com',
+    '*.google.com',
+    '*.jd.com',
+    '*.jd.hk',
+    '*.so.com',
+    '*.taobao.com',
+    '*.tmall.com',
+    '*.tmall.hk',
+    '*.yandex.com',
+    '*.csdn.net',
+    'b23.tv',
+    'cloud.tencent.com'
+  ];
 
+  async function cleanUrl(url) {
     return new Promise((resolve) => {
       chrome.storage.sync.get('whitelist', function (data) {
         const whitelist = data.whitelist || defaultWhitelist;
@@ -158,6 +224,9 @@ document.addEventListener('DOMContentLoaded', function () {
         whitelist.push(domain);
         chrome.storage.sync.set({ whitelist: whitelist }, function () {
           showNotification(chrome.i18n.getMessage('popup_add_true'), true);
+          if (!whitelistContainer.classList.contains('hidden')) {
+            whitelistTextArea.value = whitelist.join('\n');
+          }
         });
       } else {
         showNotification(chrome.i18n.getMessage('popup_add_exist'), false);
@@ -175,5 +244,4 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }, 1500);
   }
-
 });
